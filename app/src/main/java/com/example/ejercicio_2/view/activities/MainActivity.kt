@@ -1,5 +1,7 @@
 package com.example.ejercicio_2.view.activities
 
+import android.app.Activity
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -15,7 +17,6 @@ import com.example.ejercicio_2.utils.Constants
 import com.example.ejercicio_2.view.adapters.PersonajeAdapter
 import retrofit2.Call
 import retrofit2.Response
-import javax.security.auth.callback.Callback
 
 class MainActivity : AppCompatActivity() {
 
