@@ -53,6 +53,11 @@ class MainActivity2 : AppCompatActivity() {
     }
     private fun persClicked (person: Personaje){
         Toast.makeText(this, "clic en el elemento ${person.name}", Toast.LENGTH_SHORT).show()
+        val bundle =Bundle()
+        bundle.putString("id", person.id)
+        val intent =Intent(this, Details::class.java)
+        intent.putExtras(bundle)
 
+        startActivity(intent)
     }
 }
