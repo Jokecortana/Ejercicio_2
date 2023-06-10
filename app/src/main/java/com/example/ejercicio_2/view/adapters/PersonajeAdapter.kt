@@ -4,12 +4,13 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ExpandableListView.OnChildClickListener
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.ejercicio_2.databinding.Ex2ElementBinding
 import com.example.ejercicio_2.model.Personaje
 
-class PersonajeAdapter(private var context: Context, private var personajes: ArrayList<Personaje>) :
+class PersonajeAdapter(private var context: Context, private var personajes: ArrayList<Personaje>, private val clickListener: (Personaje)->Unit) :
     RecyclerView.Adapter<PersonajeAdapter.ViewHolder>() {
 
     class ViewHolder(val binding: Ex2ElementBinding) : RecyclerView.ViewHolder(binding.root) {
@@ -38,6 +39,7 @@ class PersonajeAdapter(private var context: Context, private var personajes: Arr
 
         holder.itemView.setOnClickListener {
             // Acción a realizar cuando se hace clic en el item completo del ViewHolder
+            clickListener(personajes[position])
         }
     }
 }

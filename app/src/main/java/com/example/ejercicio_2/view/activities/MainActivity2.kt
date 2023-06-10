@@ -1,7 +1,6 @@
 package com.example.ejercicio_2.view.activities
 
 import android.app.Activity
-import android.app.Person
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -19,7 +18,7 @@ import com.example.ejercicio_2.view.adapters.PersonajeAdapter
 import retrofit2.Call
 import retrofit2.Response
 
-class MainActivity : AppCompatActivity() {
+class MainActivity2 : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
 
@@ -29,7 +28,7 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val call = RetrofitService.getRetrofit().create(PersonajeApi::class.java).getPerson("api/characters/students/")
+        val call = RetrofitService.getRetrofit().create(PersonajeApi::class.java).getPerson("api/characters/staff/")
 
         call.enqueue(object : retrofit2.Callback<ArrayList<Personaje>> {
             override fun onResponse(
@@ -40,19 +39,18 @@ class MainActivity : AppCompatActivity() {
 
                 Log.d(Constants.LOGTAG, "Respuesta del servidor: ${response.body().toString()}")
 
-                binding.rvMenu.layoutManager = LinearLayoutManager(this@MainActivity)
-                binding.rvMenu.adapter = PersonajeAdapter(this@MainActivity, response.body()!!) { selectedPersona: Personaje ->
+                binding.rvMenu.layoutManager = LinearLayoutManager(this@MainActivity2)
+                binding.rvMenu.adapter = PersonajeAdapter(this@MainActivity2, response.body()!!){ selectedPersona: Personaje ->
                     persClicked(selectedPersona)
                 }
             }
 
             override fun onFailure(call: Call<ArrayList<Personaje>>, t: Throwable) {
                 binding.pbConexion.visibility = View.GONE
-                Toast.makeText(this@MainActivity, "No hay conexión", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this@MainActivity2, "No hay conexión", Toast.LENGTH_SHORT).show()
             }
         })
     }
-
     private fun persClicked (person: Personaje){
         Toast.makeText(this, "clic en el elemento ${person.name}", Toast.LENGTH_SHORT).show()
 
