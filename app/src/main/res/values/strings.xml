@@ -2,4 +2,6 @@
     <string name="app_name">Ejercicio_2</string>
     <string name="Staff">Staff</string>
     <string name="Students">Students</string>
+    <string name="Actor">Actor</string>
+    <string name="Version">Version 1.0</string>
 </resources>
