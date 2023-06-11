@@ -3,8 +3,8 @@ package com.example.ejercicio_2.model
 import com.google.gson.annotations.SerializedName
 
 data class PersonajeDetail(
-    @SerializedName("id")
-    var id: String?,
+    @SerializedName("name")
+    var name: String?,
     @SerializedName("species")
     var species: String?,
     @SerializedName("house")
@@ -17,8 +17,6 @@ data class PersonajeDetail(
     var ancestry: String?,
     @SerializedName("patronus")
     var patronus: String?,
-    @SerializedName("name")
-var name: String?,
     @SerializedName("image")
     var image: String?
 

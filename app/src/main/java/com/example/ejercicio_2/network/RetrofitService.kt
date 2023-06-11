@@ -13,6 +13,7 @@ private var INSTANCE: Retrofit? = null
             .baseUrl(Constants.BASE_URL)
             .addConverterFactory(GsonConverterFactory.create())
             .build()
+
             INSTANCE = instance
 
         instance

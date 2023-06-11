@@ -30,23 +30,32 @@ class Details : AppCompatActivity() {
         val id = bundle?.getString("id", "")
         val call = RetrofitService.getRetrofit().create(PersonajeApi::class.java).getPersonDetail(id)
 
-        call.enqueue(object : retrofit2.Callback<PersonajeDetail> {
+        call.enqueue(object : retrofit2.Callback<ArrayList<PersonajeDetail>> {
             override fun onResponse(
-                call: Call<PersonajeDetail>,
-                response: Response<PersonajeDetail>
+                call: Call<ArrayList<PersonajeDetail>>,
+                response: Response<ArrayList<PersonajeDetail>>
             ) {
                 binding.pbConexion.visibility = View.GONE
 
-                binding.tvTitle.text = response.body()!!.name
-                binding.tvLongDesc1.text =response.body()!!.ancestry
+                val personajeDetailList = response.body()
+                if (personajeDetailList != null && personajeDetailList.isNotEmpty()) {
+                    val personajeDetail = personajeDetailList[0]
 
-                Glide.with(this@Details)
-                    .load(response.body()!!.image)
-                    .into(binding.ivImage)
+                    binding.tvTitle.text = personajeDetail.name
+                    binding.tvLongDesc1.text = personajeDetail.species
+                    binding.tvLongDesc2.text = personajeDetail.house
+                    binding.tvLongDesc3.text = personajeDetail.gender
+                    binding.tvLongDesc4.text = personajeDetail.dateOfBirth
+                    binding.tvLongDesc5.text = personajeDetail.ancestry
+                    binding.tvLongDesc6.text = personajeDetail.patronus
 
+                    Glide.with(this@Details)
+                        .load(personajeDetail.image)
+                        .into(binding.ivImage)
+                }
             }
 
-            override fun onFailure(call: Call<PersonajeDetail>, t: Throwable) {
+            override fun onFailure(call: Call<ArrayList<PersonajeDetail>>, t: Throwable) {
                 binding.pbConexion.visibility = View.GONE
                 Toast.makeText(this@Details, "No hay conexión", Toast.LENGTH_SHORT).show()
             }

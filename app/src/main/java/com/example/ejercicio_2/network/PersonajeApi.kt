@@ -6,6 +6,8 @@ import com.example.ejercicio_2.model.PersonajeDetail
 import retrofit2.http.GET
 import retrofit2.http.Path
 import retrofit2.http.Query
+import retrofit2.Retrofit
+import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.Url
 import javax.security.auth.callback.Callback
 
@@ -17,10 +19,9 @@ interface PersonajeApi {
     ): retrofit2.Call<java.util.ArrayList<Personaje>>
 
 
- @GET("api/character/{id}")
- fun getPersonDetail (
-   @Path("id") id:String?
+    @GET("api/character/{id}")
+    fun getPersonDetail(@Path("id") id: String?): retrofit2.Call<ArrayList<PersonajeDetail>>
 
- ): retrofit2.Call<PersonajeDetail>
+
 
 }
