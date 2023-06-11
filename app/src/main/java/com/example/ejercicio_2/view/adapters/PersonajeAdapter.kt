@@ -17,7 +17,7 @@ class PersonajeAdapter(private var context: Context, private var personajes: Arr
         val ivThumbnail = binding.ivThumbnail
         val tvTitle = binding.tvTitle
         val tvDeveloper = binding.tvDeveloper
-        // Agrega aquí referencias a otros elementos de la vista si los tienes
+
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -32,13 +32,12 @@ class PersonajeAdapter(private var context: Context, private var personajes: Arr
         holder.tvTitle.text = personaje.name
         holder.tvDeveloper.text = personaje.actor
 
-        // Carga la imagen utilizando Glide
+
         Glide.with(context)
             .load(personaje.image)
             .into(holder.ivThumbnail)
 
         holder.itemView.setOnClickListener {
-            // Acción a realizar cuando se hace clic en el item completo del ViewHolder
             clickListener(personajes[position])
         }
     }

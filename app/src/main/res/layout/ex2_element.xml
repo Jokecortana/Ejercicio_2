@@ -44,7 +44,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/guideline8"
         app:layout_constraintTop_toTopOf="@+id/guideline7"
-        tools:text="Nombre de personaje" />
+        tools:text="@string/Nombredepersonaje" />
 
 
     <TextView

@@ -18,13 +18,11 @@ class Seleccion : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.button.setOnClickListener {
-            // Botón "Students" presionado
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
         }
 
         binding.button2.setOnClickListener {
-            // Botón "Staff" presionado
             val intent = Intent(this, MainActivity2::class.java)
             startActivity(intent)
         }

@@ -57,7 +57,7 @@ class Details : AppCompatActivity() {
 
             override fun onFailure(call: Call<ArrayList<PersonajeDetail>>, t: Throwable) {
                 binding.pbConexion.visibility = View.GONE
-                Toast.makeText(this@Details, "No hay conexión", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this@Details, getString(R.string.no_connection_message), Toast.LENGTH_SHORT).show()
             }
         })
     }

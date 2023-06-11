@@ -38,7 +38,8 @@ class MainActivity : AppCompatActivity() {
             ) {
                 binding.pbConexion.visibility = View.GONE
 
-                Log.d(Constants.LOGTAG, "Respuesta del servidor: ${response.body().toString()}")
+                val serverResponseMessage = getString(R.string.server_response_message, response.body().toString())
+                Log.d(Constants.LOGTAG, serverResponseMessage)
 
                 binding.rvMenu.layoutManager = LinearLayoutManager(this@MainActivity)
                 binding.rvMenu.adapter = PersonajeAdapter(this@MainActivity, response.body()!!) { selectedPersona: Personaje ->
@@ -48,13 +49,12 @@ class MainActivity : AppCompatActivity() {
 
             override fun onFailure(call: Call<ArrayList<Personaje>>, t: Throwable) {
                 binding.pbConexion.visibility = View.GONE
-                Toast.makeText(this@MainActivity, "No hay conexión", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this@MainActivity, getString(R.string.no_connection_message), Toast.LENGTH_SHORT).show()
             }
         })
     }
 
     private fun persClicked (person: Personaje){
-        Toast.makeText(this, "clic en el elemento ${person.name}", Toast.LENGTH_SHORT).show()
 
         val bundle =Bundle()
         bundle.putString("id", person.id)

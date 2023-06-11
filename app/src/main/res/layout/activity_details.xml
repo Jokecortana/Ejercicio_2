@@ -37,7 +37,7 @@
                     android:textColor="@color/black"
                     android:textSize="40sp"
                     android:textStyle="bold"
-                    tools:text="Title" />
+                    tools:text="@string/Title" />
 
                 <com.makeramen.roundedimageview.RoundedImageView
                     android:id="@+id/ivImage"
@@ -61,7 +61,7 @@
                     android:paddingBottom="10dp"
                     android:textColor="@color/micolor5"
                     android:textSize="25sp"
-                    tools:text="Species" />
+                    tools:text="@string/Species" />
 
                 <TextView
                     android:id="@+id/tvLongDesc2"
@@ -76,7 +76,7 @@
                     android:paddingBottom="10dp"
                     android:textColor="@color/micolor5"
                     android:textSize="25sp"
-                    tools:text="House" />
+                    tools:text="@string/House" />
 
                 <TextView
                     android:id="@+id/tvLongDesc3"
@@ -91,7 +91,7 @@
                     android:paddingBottom="10dp"
                     android:textColor="@color/micolor5"
                     android:textSize="25sp"
-                    tools:text="Gender" />
+                    tools:text="@string/Gender" />
                 <TextView
                     android:id="@+id/tvLongDesc4"
                     android:layout_width="match_parent"
@@ -105,7 +105,7 @@
                     android:paddingBottom="10dp"
                     android:textColor="@color/micolor5"
                     android:textSize="25sp"
-                    tools:text="Date of birth" />
+                    tools:text="@string/Dateofbirth" />
                 <TextView
                     android:id="@+id/tvLongDesc5"
                     android:layout_width="match_parent"
@@ -119,7 +119,7 @@
                     android:paddingBottom="10dp"
                     android:textColor="@color/micolor5"
                     android:textSize="25sp"
-                    tools:text="Ancestry" />
+                    tools:text="@string/Ancestry" />
                 <TextView
                     android:id="@+id/tvLongDesc6"
                     android:layout_width="match_parent"
@@ -133,7 +133,7 @@
                     android:gravity="center"
                     android:textColor="@color/micolor5"
                     android:textSize="25sp"
-                    tools:text="Patronus" />
+                    tools:text="@string/Patronus" />
             </LinearLayout>
         </ScrollView>
 

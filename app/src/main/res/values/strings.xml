@@ -4,4 +4,14 @@
     <string name="Students">Students</string>
     <string name="Actor">Actor</string>
     <string name="Version">Version 1.0</string>
+    <string name="Title">Title</string>
+    <string name="Species">Species</string>
+    <string name="House">House</string>
+    <string name="Gender">Gender</string>
+    <string name="Dateofbirth">Date of Birth</string>
+    <string name="Ancestry">Ancestry</string>
+    <string name="Patronus">Patronus</string>
+    <string name="Nombredepersonaje">Nombre de Personaje</string>
+    <string name="no_connection_message">No hay conexión</string>
+    <string name="server_response_message">Respuesta del servidor: %1$s</string>
 </resources>
